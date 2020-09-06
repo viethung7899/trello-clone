@@ -20,7 +20,7 @@ export class TaskDialogComponent implements OnInit {
     private dialog: MatDialog,
     public dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
-    private boardService: BoardService
+    private boardService: BoardService,
   ) {}
 
   ngOnInit(): void {}
@@ -55,7 +55,6 @@ export class TaskDialogComponent implements OnInit {
         this.dialogRef.close();
       }
     });
-
   }
 
   isEmptyDescription() {

@@ -18,7 +18,7 @@ export class LogInFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private afAuth: AngularFireAuth,
-    private snack: SnackService
+    private snack: SnackService,
   ) {}
 
   ngOnInit(): void {

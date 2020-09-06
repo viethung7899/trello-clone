@@ -15,18 +15,19 @@ export class ShellComponent {
     .observe(Breakpoints.Handset)
     .pipe(
       map((result) => result.matches),
-      shareReplay()
+      shareReplay(),
     );
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     public afAuth: AngularFireAuth,
-    private snack: SnackService
+    private snack: SnackService,
   ) {}
 
   onLogout() {
-    this.afAuth.signOut().then(
-      () => this.snack.sucessful('/login')
-    ).catch(this.snack.error);
+    this.afAuth
+      .signOut()
+      .then(() => this.snack.sucessful('/login'))
+      .catch(this.snack.error);
   }
 }

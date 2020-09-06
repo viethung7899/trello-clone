@@ -18,13 +18,13 @@ export class BoardService {
         if (user) {
           return this.fs
             .collection<Board>('boards', (ref) =>
-              ref.where('uid', '==', user.uid).orderBy('priority')
+              ref.where('uid', '==', user.uid).orderBy('priority'),
             )
             .valueChanges({ idField: 'id' });
         } else {
           return [];
         }
-      })
+      }),
     );
   }
 
@@ -43,7 +43,9 @@ export class BoardService {
     const batch = database.batch();
 
     // Get the board reference of each board
-    const refs = boards.map((board) => database.collection('boards').doc(board.id));
+    const refs = boards.map((board) =>
+      database.collection('boards').doc(board.id),
+    );
 
     // Modify the id of each board
     refs.forEach((ref, index) => batch.update(ref, { priority: index }));
@@ -55,9 +57,7 @@ export class BoardService {
     return this.fs.collection('boards').doc(board.id).delete();
   }
 
-  renameBoard(board: Board) {
-    
-  }
+  renameBoard(board: Board) {}
 
   updateTasks(board: Board, tasks: Task[]) {
     return this.fs.collection('boards').doc(board.id).update({ tasks });

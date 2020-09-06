@@ -11,7 +11,7 @@ export class SnackService {
 
   authError() {
     this.snackBar.open('You must be logged in!', 'OK', {
-      duration: 5000
+      duration: 5000,
     });
 
     this.router.navigate(['/login']);

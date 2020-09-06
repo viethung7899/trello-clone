@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BoardService } from '../boards/board.service';
-import {Board} from '../boards/board.model'
+import { BoardService } from '../board.service';
+import { Board } from '../board.model';
 
 @Component({
   selector: 'app-delete-confirm-component',
@@ -9,7 +9,8 @@ import {Board} from '../boards/board.model'
     <h1 mat-dialog-title>Are you sure?</h1>
     <div mat-dialog-content>
       <p>
-        Do you want to delete the <strong>{{ data.name }}</strong> {{ data.type }}?
+        Do you want to delete the <strong>{{ data.name }}</strong>
+        {{ data.type }}?
       </p>
     </div>
     <div mat-dialog-action>
@@ -24,7 +25,7 @@ import {Board} from '../boards/board.model'
 export class DeleteConfirmDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DeleteConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
+    @Inject(MAT_DIALOG_DATA) public data,
   ) {}
 
   ngOnInit(): void {}

@@ -9,7 +9,7 @@
     <h1>Register</h1>
     <button mat-stroked-button (click)="onSwitchMode()">Register?</button>
   </div>
-  
+
   <!-- The form -->
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field [color]="email.valid && 'accent'">
@@ -59,8 +59,8 @@
       type="submit"
       color="accent"
       [disabled]="form.invalid"
-    >Submit</button>
+    >
+      Submit
+    </button>
   </form>
-
-
 </mat-card>

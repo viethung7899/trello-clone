@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Board, Task } from '../board.model';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
-import { TaskDialogComponent } from '../../dialogs/task-dialog/task-dialog.component';
-import { DeleteConfirmDialogComponent } from '../../dialogs/delete-confirm-dialog.component';
+import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
+import { DeleteConfirmDialogComponent } from '../dialogs/delete-confirm-dialog.component';
 import { BoardService } from '../board.service';
-import { BoardDialogComponent } from 'src/app/dialogs/board-dialog/board-dialog.component';
+import { BoardDialogComponent } from 'src/app/boards/dialogs/board-dialog/board-dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -70,8 +70,6 @@ export class BoardComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe(data => {
-      
-    })
+    dialogRef.afterClosed().subscribe((data) => {});
   }
 }

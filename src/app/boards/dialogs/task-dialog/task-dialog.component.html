@@ -15,7 +15,7 @@
   >
     <mat-button-toggle *ngFor="let color of labelOptions" [value]="color">
       <mat-icon [ngClass]="color">{{
-        color === "gray" ? "check_circle" : "lens"
+        color === 'gray' ? 'check_circle' : 'lens'
       }}</mat-icon>
     </mat-button-toggle>
   </mat-button-toggle-group>
@@ -42,7 +42,13 @@
   >
     SAVE
   </button>
-  <button mat-button color="warn" [disabled]="false" *ngIf="!data.editMode" (click)="onDeletion()">
+  <button
+    mat-button
+    color="warn"
+    [disabled]="false"
+    *ngIf="!data.editMode"
+    (click)="onDeletion()"
+  >
     DELETE
   </button>
 

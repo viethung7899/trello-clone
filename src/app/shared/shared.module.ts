@@ -1,40 +1,44 @@
 import { NgModule } from '@angular/core';
 
-// Import from @angular/material
+// Import from @angular/material for toolbar
+import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
-// Impport from cdk
-import { LayoutModule } from '@angular/cdk/layout';
+// Import modules
+import { ShellComponent } from './shell/shell.component';
 
-const materialComponents = [
+const modules = [
+  CommonModule,
   MatToolbarModule,
   MatButtonModule,
   MatSidenavModule,
   MatIconModule,
   MatListModule,
   MatCardModule,
-  MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
-  MatButtonToggleModule,
-  DragDropModule,
-  LayoutModule
+  LayoutModule,
+  RouterModule,
+  MatMenuModule,
 ];
 
+const components = [ShellComponent];
+
 @NgModule({
-  imports: [materialComponents],
-  exports: [materialComponents],
+  declarations: [...components],
+  imports: [...modules],
+  exports: [...components, ...modules],
 })
-export class MaterialModule {}
+export class SharedModule {}
