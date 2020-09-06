@@ -1,0 +1,56 @@
+.board-container {
+  margin: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 0;
+
+  .mat-card-header {
+    background: rgba($color: #000000, $alpha: 0.1);
+    padding: 20px 0;
+  }
+
+  .buttons-container {
+    margin-top: -20px;
+    float: right;
+    button {
+      margin: 0 8px;
+    }
+  }
+
+  .tasks-container {
+    padding-top: 30px;
+    cursor: pointer;
+
+    .inner-card {
+      padding: 8px;
+    }
+  }
+
+  .cdk-drop-list-dragging .cdk-drag {
+    transition: transform 250ms ease;
+  }
+
+  // Drap and drop animation
+  .cdk-drag-placeholder {
+    opacity: 0.5;
+  }
+}
+
+.blue {
+  background: #71deff;
+  color: black;
+}
+.green {
+  background: #36e9b6;
+  color: black;
+}
+.yellow {
+  background: #ffcf44;
+  color: black;
+}
+.purple {
+  background: #b15cff;
+}
+.red {
+  background: #e74a4a;
+}

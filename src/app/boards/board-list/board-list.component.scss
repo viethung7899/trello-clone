@@ -1,0 +1,39 @@
+mat-toolbar {
+  height: 100px;
+}
+
+.board-list {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin: -80px 0;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 4px;
+  }
+}
+
+// Drap and drop animation
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms ease;
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms ease;
+}
+
+.add-button-container {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}

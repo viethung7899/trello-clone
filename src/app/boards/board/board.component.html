@@ -1,0 +1,38 @@
+<mat-card class="board-container">
+  <!-- Card header -->
+  <mat-card-header>
+    <mat-card-title>{{ board.title }}</mat-card-title>
+    <mat-card-subtitle>ID: {{ board.id }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- Main Buttons -->
+  <div class="buttons-container">
+    <button mat-mini-fab color="warn" (click)="openBoardDialog()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-mini-fab color="warn" (click)="openDeleteDialog()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent" (click)="openTaskDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <!-- Card body -->
+  <div
+    class="tasks-container"
+    cdkDropList
+    cdkDropListOrientation="vertical"
+    (cdkDropListDropped)="taskDrop($event)"
+  >
+    <div
+      class="inner-card"
+      *ngFor="let task of board.tasks; let i = index"
+      cdkDrag
+    >
+      <mat-card [ngClass]="task.color" (click)="openTaskDialog(task, i)">{{
+        task.description
+      }}</mat-card>
+    </div>
+  </div>
+</mat-card>

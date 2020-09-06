@@ -1,0 +1,17 @@
+<mat-toolbar class="decoreate" color="primary"></mat-toolbar>
+<div
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  class="board-list"
+  (cdkDropListDropped)="drop($event)"
+>
+  <app-board cdkDrag *ngFor="let board of boards" [board]="board"> </app-board>
+</div>
+
+<!-- Add buttons -->
+<div class="add-button-container">
+  <button mat-raised-button color="accent" (click)="openBoardDialog()">
+    <mat-icon>add</mat-icon>
+    <span>ADD NEW BOARD</span>
+  </button>
+</div>
