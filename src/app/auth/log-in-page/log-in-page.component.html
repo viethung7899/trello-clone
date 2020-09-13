@@ -1,6 +1,6 @@
 <main>
   <div *ngIf="!(afAuth.authState | async)">
-    <button mat-raised-button>
+    <button mat-raised-button appGoogleAuth>
       <img src="/assets/google-logo.svg" />
       <span>Log in with Google</span>
     </button>
