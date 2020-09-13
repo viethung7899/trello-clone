@@ -14,9 +14,7 @@
     [(ngModel)]="data.task.color"
   >
     <mat-button-toggle *ngFor="let color of labelOptions" [value]="color">
-      <mat-icon [ngClass]="color">{{
-        color === 'gray' ? 'check_circle' : 'lens'
-      }}</mat-icon>
+      <mat-icon [ngClass]="color">lens</mat-icon>
     </mat-button-toggle>
   </mat-button-toggle-group>
 </div>
